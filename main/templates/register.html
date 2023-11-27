@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<script>
+    // Automatically redirect to a specific URL after a delay
+    setTimeout(function() {
+        window.location.href = "/";
+    }, 1);
+</script>
+{% else %}
+<style type="text/css">
+	@media (max-width:1033px) {
+		.register {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+	input {
+		margin-top: 30px;
+	}
+	footer {
+		position: relative;
+		margin-top: 5em;
+
+	}
+</style>
+<form method="POST">
+	{% csrf_token %}
+	<div style="display: flex;justify-content: space-evenly;margin-top: 50px;" class="register">
+		<div class="" style="font-size: 100px;display:flex;align-items: center;">Register</div>
+		<div class="" style="display: flex;flex-direction: column;">
+			<input type="text" name="first_name" placeholder="First Name">
+			<input type="text" name="last_name" placeholder="Last Name">
+			<input type="email" name="email" placeholder="Email">
+			<input type="password" name="password" placeholder="Password">
+			<input type="password" name="re_password" placeholder="Re-enter Password">
+			<p style="font-size:30px;text-align: center">{{message}}</p>
+			<button style="margin-top:50px">Submit</button>
+		</div>
+	</div>
+</form>
+<div style="text-align: center;margin-top: 5em;">
+	<p style="font-size:50px;">Already have an account?</p>
+	<button style="margin-top:20px;"><a href="/accounts/login" style="color:black;text-decoration: none;">Login</a></button>
+</div>
+{% endif %}
+{% endblock %}

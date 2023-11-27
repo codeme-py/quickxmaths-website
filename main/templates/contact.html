@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+	@media (max-width:1156px) {
+		.contact {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+	input, textarea {
+		margin-top: 30px;
+	}
+	footer {
+		position: relative;
+		margin-top: 5em;
+
+	}
+</style>
+<form method="POST">
+	{% csrf_token %}
+	<div style="display: flex;justify-content: space-evenly;margin-top: 50px;" class="contact">
+		<div class="" style="font-size: 100px;display:flex;align-items: center;">Contact Us</div>
+		<div class="" style="display: flex;flex-direction: column;">
+			<input type="text" name="first-name" placeholder="First Name" disabled style="color:grey;" value={{user.first_name}}>
+			<input type="text" name="last-name" placeholder="Last Name" disabled style="color:grey;" value={{user.last_name}}>
+			<input type="email" name="email" placeholder="Email" disabled style="color:grey;" value={{user.email}}>
+			<textarea placeholder="How can we help you?" name="content"></textarea>
+			<p style="font-size:30px;text-align: center;margin-top:60px;max-width: 20em">{{message}}</p>
+			<button style="margin-top:50px">Submit</button>
+		</div>
+	</div>
+</form>
+{% endblock %}

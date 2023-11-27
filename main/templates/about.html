@@ -1,0 +1,44 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+	@media (max-width:1415px) {
+		.aboutus {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+		.aboutus div {
+			margin-top: 3em;
+			margin-bottom: 3em;
+		}
+	}
+	footer {
+		position: relative;
+		margin-top: 5em;
+
+	}
+	#aboutusmax {
+		max-width: 30em;
+	}
+</style>
+<div style="display:flex;justify-content: space-evenly;" class="aboutus">
+	<div style="display: flex;align-items: center;">
+		<img src="{% static 'images/cjm.jpeg' %}" style="border-radius: 3em;width: 700px">
+	</div>
+	<div id="aboutusmax">
+
+		<p style="font-size:35px;">
+			{% if user.is_authenticated %}
+			Hi <span style="color: red">{{user.first_name}}</span>!
+			{% else %}
+			Hi Everyone! 
+			{% endif %}<br>
+			I'm Christian J. Moore<br><br>
+			<span style="color:red;">QUICK x MATHS</span> is a micro-business run by myself, <a href="mailto:Christian@QUICKxMATHS.com" style="color:black;">Christian@QUICKxMATHS.com</a> - and my team of hard working engineers & designers - out of my home office in South Florida!<br><br>
+			I am currently a Math Support and PE teacher for <a href="https://www.browardschools.com/" style="color:black;">Broward Schools!</a><br><br>
+			If you like everything we’re doing, please help us grow by sharing QUICK x MATHS with friends and family!<br><br>
+			And don’t forget to give us an honest rating and review on <a href="https://apps.apple.com/us/app/quick-x-maths/id1644049604" style="color:black;">App Store!</a> 🧠 🏆 ✅ ↙️ </p>
+	</div>
+</div>
+{% endblock %}

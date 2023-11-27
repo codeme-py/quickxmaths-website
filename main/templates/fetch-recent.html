@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<form method="POST">
+	{% csrf_token %}
+	<div class="" style="font-size: 100px;text-align: center;margin-top: 100px;">Fetch Recent Posts</div>
+	<div style="display: flex;justify-content: space-evenly;margin-top: 300px;">
+			<button name="auto-fetch">Start Auto Fetch</button>
+			<button name="manual-fetch">Fetch Manually</button>
+		</div>
+	</div>
+</form>
+{% endblock %}

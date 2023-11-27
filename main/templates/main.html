@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>QUICK x MATHS</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/d1758bd918.js" crossorigin="anonymous"></script>
+</head>
+<style>
+	@media (max-width: 1658px) {
+		div, p, nav, input, img, a, button,textarea{
+			display: flex;
+			flex-direction: column;
+		    text-align: center;
+			font-size: 5vw !important;
+		}
+		.welcome1 {
+			display: flex;
+			flex-direction: column;
+		}
+		.welcome, .welcome1 p, .welcome1 p span img{
+			font-size: 15vw !important;
+		}
+		.socialp-3 iframe{
+			width: 40vw !important;
+		}
+		.socialp-2 div iframe {
+			width: 90vw !important;
+		}
+		.aboutus div img {
+			width: 80vw !important;
+		}
+		button {
+			align-items: center !important;
+		}
+		header a img {
+			width: 20vw !important;
+		}
+		.main-menu li a {
+			margin-right: 10px;
+		}
+		.welcome p, .welcome span {
+			font-size: 5vw !important;
+		}
+		.welcome1 p {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+	@media (max-width: 1658px) and (min-width: 800px){
+		.main-menu li a {
+			margin-right: 60px;
+		}
+	}
+</style>
+<body>
+	<header style="display: flex;flex-direction: row;align-content: center;justify-content: space-between;">
+		<a href="/"><img src="{% static 'images/Logo.png' %}" style="width: 120px;"></a>
+		<nav class="main-menu" style="display:flex;list-style: none;flex-direction: row;align-items: center;">
+			<li><a href="/">Home</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a href="/contact">Contact</a></li>
+			{% if user.is_authenticated %}
+			<!--<li><a href="/play">Play</a></li>-->
+			<li><a href="/accounts/logout">Logout</a></li>
+			{% else %}
+			<li><a href="/accounts/login">Login</a></li>
+			{% endif %}
+		</nav>
+	</header>
+	{% block content %}
+	{% endblock %}
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</body>
+	<footer style="">
+		<a href="https://www.instagram.com/quickxmaths/"><i class="fa-brands fa-instagram"></i></a>
+		<a href="https://www.facebook.com/QUICKxMATHS"><i class="fa-brands fa-facebook"></i></a>
+		<a href="https://twitter.com/QUICKxMATHS_iOS"><i class="fa-brands fa-twitter"></i></a>
+		<a href="https://apps.apple.com/us/app/quick-x-maths/id1644049604"><i class="fa-brands fa-app-store"></i></a>
+	</footer>
+</html>
