@@ -1,0 +1,70 @@
+{% load static %}
+
+body {
+	margin: 10px;
+	font-family: 'Pixelify Sans', sans-serif;
+}
+ 
+.main-menu li a{
+	font-size: 35px;
+	margin-right: 40px;
+	text-decoration: none;
+	color: black;
+}
+
+button {
+	border: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+	font-family: inherit;
+	font-size: 50px;
+	background: #D0CDCC;
+	transition: .3s;
+	outline:none;
+}
+
+input,textarea {
+	font-family: inherit;
+	padding: 20px;
+	border: none;
+	background:#D0CDCC;
+	font-size: 40px;
+	color: black;
+	transition: .3s;
+	outline:none;
+	resize:none;
+
+}
+
+button:hover, input:focus, button:focus, textarea:focus{
+	transform: scale(1.1);
+}
+footer a{
+	color: black;
+	font-size: 30px;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+	display: flex;
+	justify-content: space-evenly;
+}
+.aboutapp-1, .aboutapp-2, .aboutapp-3, .aboutapp-4, .aboutapp-5, .aboutapp-6, .aboutapp-7, .aboutapp-8, .aboutapp-9, .aboutapp-10 {
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.homep-2 p {
+	font-size: 50px;
+	max-width: 20em;
+}
+
+.homep-2 img {
+	width: 300px;
+}
